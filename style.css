@@ -7,38 +7,6 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline;
 }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after {
-  content: '';
-  content: none;
-}
-
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -61,19 +29,23 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 1rem 0rem;
+  padding-bottom: 2rem;
 }
 
 h1 {
   font-size: 2rem;
-  margin: 1rem 0rem;
+  margin: 1rem 1rem;
   font-family: 'Fira Sans', sans-serif;
   padding: 0.35rem;
   border-bottom: 4px solid #67D874;
+  text-align: center;
 }
 
 p {
   font-family: 'Fira Sans', sans-serif;
+  text-align: center;
 }
 
 /* Lotto */
@@ -81,6 +53,8 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -91,7 +65,7 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70%;
+  width: 80%;
   margin-bottom: 3rem;
   margin-top: 3rem;
 }
@@ -139,5 +113,20 @@ p {
           transform: scale(1.1);
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
+}
+
+#winProbabilityText {
+  margin-top: 2rem;
+  padding: 0.25rem;
+  min-height: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  #allNumbers {
+    width: 100%;
+  }
+  #numberDiv {
+    width: 90%;
+  }
 }
 /*# sourceMappingURL=style.css.map */

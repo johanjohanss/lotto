@@ -4,8 +4,13 @@ window.addEventListener("load", function(){
     startBtn.addEventListener("click", runGenerator);
 
     let numbers = [];
+    let winProbNumbers = [];
+    let rowCounter, counter;
+    let probabilityRuns = 1000000;
 
     let animationInterval;
+
+    let winProbabilityText = document.getElementById("winProbabilityText");
 
     function runGenerator(){
         generateNumbers();
@@ -46,11 +51,55 @@ window.addEventListener("load", function(){
         setTimeout(function(){
             stopAnimation();
             updateNumbers();
+            getWinProbability();
         }, 2000);
     }
 
     function stopAnimation(){
         clearInterval(animationInterval);
+    }
+
+    function getWinProbability(){
+        winProbabilityText.innerText = "Calculating probability...";
+
+        setTimeout(function(){
+
+            counter = 0;
+            for(let i = 0 ; i<probabilityRuns ; i++){
+
+                rowCounter = 0;
+                winProbNumbers = [];
+
+                //Make new numbers
+                for(let j = 0 ; j < 7 ; j++){
+                    let rand = Math.floor(Math.random() * 35) + 1;
+            
+                    while(winProbNumbers.includes(rand)){
+                        rand = Math.floor(Math.random() * 35) + 1;
+                    }
+                    winProbNumbers.push(rand);
+                }
+        
+                //Check if numbers includes
+                for(let j = 0 ; j < 7 ; j++){
+                    if(numbers.includes(winProbNumbers[j])){
+                        rowCounter ++;
+                    }
+                }
+
+                if(rowCounter > 6){
+                    counter++;
+                }
+
+            }
+
+            showWinProbability();
+        }, 500);
+        
+    }
+
+    function showWinProbability(){
+        winProbabilityText.innerText = "Probability: " + counter + " / " + probabilityRuns;
     }
 
 });
