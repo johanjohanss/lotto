@@ -1,0 +1,107 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline; }
+  
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+display: block; }
+
+body {
+line-height: 1; }
+
+ol, ul {
+list-style: none; }
+
+blockquote, q {
+quotes: none; }
+
+blockquote {
+&:before, &:after {
+    content: '';
+    content: none; } }
+
+q {
+&:before, &:after {
+    content: '';
+    content: none; } }
+
+table {
+border-collapse: collapse;
+border-spacing: 0; }
+
+$lottoGreen: #67D874;
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Merriweather', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+h1{
+    font-size: 2rem;
+    margin: 1rem 0rem;
+    font-family: 'Fira Sans', sans-serif;
+    padding: 0.35rem;
+    border-bottom: 4px solid $lottoGreen;
+}
+p{
+    font-family: 'Fira Sans', sans-serif;
+}
+
+/* Lotto */
+#allNumbers{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+#numberDiv{
+    margin: 0.25rem;
+    padding: 2rem 3rem;
+    min-width: 9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $lottoGreen;
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.11);
+}
+#startBtn{
+    padding: 1rem 3rem;
+    background-color: $lottoGreen;
+    color: white;
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.11);
+    border: none;
+    transition: all 1s ease;
+    transform: scale(1);
+
+    font-weight: 300;
+
+    &:hover{
+        cursor: pointer;
+        
+        transform: scale(1.1);
+        transition: all 1s ease;
+    }
+}
