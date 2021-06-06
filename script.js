@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
     let numbers = [];
     let winProbNumbers = [];
     let rowCounter, counter;
-    let probabilityRuns = 1000000;
+    let probabilityRuns = 1500000;
 
     let animationInterval;
 
@@ -51,7 +51,7 @@ window.addEventListener("load", function(){
         setTimeout(function(){
             stopAnimation();
             updateNumbers();
-            getWinProbability();
+            //getWinProbability();
         }, 2000);
     }
 
@@ -61,10 +61,9 @@ window.addEventListener("load", function(){
 
     function getWinProbability(){
         winProbabilityText.innerText = "Calculating probability...";
-
+        counter = 0;
         setTimeout(function(){
 
-            counter = 0;
             for(let i = 0 ; i<probabilityRuns ; i++){
 
                 rowCounter = 0;
